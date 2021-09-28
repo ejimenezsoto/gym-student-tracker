@@ -5,7 +5,6 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <div className="App">
-      <h3>Student Time Tracker</h3>
      <StudentForm/>
     </div>
   );

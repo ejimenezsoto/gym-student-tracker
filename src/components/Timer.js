@@ -79,7 +79,8 @@ export default class Timer extends Component {
     } = this;
 
     const timestamp = running ? Date.now() + value : value;
-    const h = Math.floor(timestamp / 3600000);
+    const d = Math.floor(timestamp / 86400000);
+    const h = Math.floor(timestamp / 3600000) % 24;
     const m = Math.floor(timestamp / 60000) % 60;
     const s = Math.floor(timestamp / 1000) % 60;
     const ms = timestamp % 1000;
@@ -91,7 +92,7 @@ export default class Timer extends Component {
       <div className="container">
         <div className="timer-container">
           <div className="current-timer">
-            {_(h) + ":" + _(m) + ":" + _(s) + "." + _(ms, 3)}
+            {_(d) + ":" +  _(h) + ":" + _(m) + ":" + _(s) + "." + _(ms, 3)}
           </div>
           <div className="timer-controls">
             <button className="btn btn-success " onClick={start}>

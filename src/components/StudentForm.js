@@ -1,5 +1,8 @@
 import React,  { useState, useEffect } from "react";
 import Timer from "./Timer";
+import header from "../images/Header.jpeg"
+import './StudentForm.css'
+
 
 export default function StudentForm()  {
   
@@ -9,6 +12,7 @@ export default function StudentForm()  {
   const [newStudent, setNewStudent] = useState("");
 
   const saveData = (newStudents) => {
+    
     localStorage.setItem("students", JSON.stringify(newStudents));
   };
 
@@ -39,6 +43,9 @@ export default function StudentForm()  {
   
   return (
     <div className="container mt-5">
+      <div id="header" className="mr-20">
+    <img src={header} alt="logo" />
+    </div> 
       <table className="table table-dark mt-5">
         <thead>
           <tr>
@@ -73,14 +80,13 @@ export default function StudentForm()  {
         <tbody id="table">
           {students.map((student) => (
             <tr key={student.id}>
-              <td>{student.student}</td>
-              <td><Timer localStorage={student.id}/></td>
-              <td>
+              <td className="align-middle">{student.student}</td>
+              <td><Timer localStorage={student.id} interval={150}/></td>
+              <td className="align-middle">
                 <button
                   className="btn btn-danger"
                   onClick={() => deleteStudent(student.id)}
                 >
-
                   {" "}
                   Delete{" "}
                 </button>{" "}
