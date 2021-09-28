@@ -43,9 +43,8 @@ export default function StudentForm()  {
   
   return (
     <div className="container mt-5">
-      <div id="header" className="mr-20">
-    <img src={header} alt="logo" />
-    </div> 
+    <img src={header} alt="logo" className="img"/>
+    
       <table className="table table-dark mt-5">
         <thead>
           <tr>
@@ -65,6 +64,7 @@ export default function StudentForm()  {
                 Sign-Up
               </button>
             </th>
+            <th scope="col"></th>
           </tr>
         </thead>
 
@@ -81,7 +81,7 @@ export default function StudentForm()  {
           {students.map((student) => (
             <tr key={student.id}>
               <td className="align-middle">{student.student}</td>
-              <td><Timer localStorage={student.id} interval={150}/></td>
+              <td className="align-middle"><Timer localStorage={student.id} interval={150}/></td>
               <td className="align-middle">
                 <button
                   className="btn btn-danger"

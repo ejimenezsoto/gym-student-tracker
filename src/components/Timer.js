@@ -89,17 +89,18 @@ export default class Timer extends Component {
       String(nr).padStart(length, padding);
 
     return (
-      <div className="container">
-        <div className="timer-container">
-          <div className="current-timer">
+      <div className="container, align-middle">
+        <div className="timer-container, align-middle">
+          <div className="current-timer, align-middle">
             {_(d) + ":" +  _(h) + ":" + _(m) + ":" + _(s) + "." + _(ms, 3)}
           </div>
           <div className="timer-controls">
-            <button className="btn btn-success " onClick={start}>
+            <button className="btn btn-success" onClick={start}>
               Sign In
             </button>
+            {"   "}
 
-            <button className="btn btn-success" onClick={stop}>
+            <button className="btn btn-warning" onClick={stop}>
               Sign Out
             </button>
           </div>
