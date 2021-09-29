@@ -42,7 +42,7 @@ export default function StudentForm()  {
 
   
   return (
-    <div className="container mt-5">
+    <div className="container">
     <img src={header} alt="logo" className="img"/>
     
       <table className="table table-dark mt-5">
@@ -53,7 +53,7 @@ export default function StudentForm()  {
                 type="text"
                 id="todoInput"
                 className="form-control"
-                placeholder="Type Full Name"
+                placeholder="Enter Your Full Name"
                 value={newStudent}
                 onChange={(e) => setNewStudent(e.target.value)}
               />
@@ -63,15 +63,6 @@ export default function StudentForm()  {
                 {" "}
                 Sign-Up
               </button>
-            </th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-
-        <thead>
-          <tr>
-            <th scope="col" colSpan="2">
-              Students
             </th>
             <th scope="col"></th>
           </tr>
